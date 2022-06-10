@@ -23,6 +23,9 @@ const App = () => {
         >
           <Form>
             <Field name="search" />
+            <Field name="credito" />
+            <Field name="solicitud" />
+            <Field name="Enviar" /> 
           </Form>  
         </Formik>
       </header>
@@ -30,7 +33,7 @@ const App = () => {
         <div className="center">
           {photos.map(photo =>
             <article key={photo.id} onClick={() => open(photo.links.html)}>
-              <img src={photo.urls.regular}/> 
+              <img src={photo.urls.regular} alt="prueba"/> 
               <p>{[photo.description, photo.alt_description].join(' - ')}</p>
             </article>)}
         </div>
