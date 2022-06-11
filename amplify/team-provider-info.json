@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-celyaconta-dev-233410-authRole",
+      "UnauthRoleArn": "arn:aws:iam::007374026427:role/amplify-celyaconta-dev-233410-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::007374026427:role/amplify-celyaconta-dev-233410-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-celyaconta-dev-233410-deployment",
+      "UnauthRoleName": "amplify-celyaconta-dev-233410-unauthRole",
+      "StackName": "amplify-celyaconta-dev-233410",
+      "StackId": "arn:aws:cloudformation:us-east-1:007374026427:stack/amplify-celyaconta-dev-233410/bf9a61a0-e93f-11ec-9e78-0a54ab21e0b7",
+      "AmplifyAppId": "d3ivss5lunsu14"
+    },
+    "categories": {
+      "auth": {
+        "celyacontad60c1fd4": {}
+      }
+    }
+  }
+}
