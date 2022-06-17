@@ -20,7 +20,10 @@ const App = ({ signOut, user }) => {
     <div>
       <header>
         <Formik
-          initialValues={{cedula: '', credito: '',}}
+          initialValues={{
+            title: '', 
+            body: ''
+          }}
           /*onSubmit={async values => {
             const response = await fetch(`https://api.unsplash.com/search/photos?per_page=20&query=${values.search}`, {
               headers: {
@@ -31,12 +34,36 @@ const App = ({ signOut, user }) => {
             // llamar a api de celya
             setPhotos(data.results)
           }}*/
-          onSubmit={handleSubmit}
+          
+          onSubmit={ values => {
+            fetch('https://jsonplaceholder.typicode.com/posts', {
+              method: 'POST',
+              body: JSON.stringify({
+                title: values.title,
+                body: values.body
+              }),
+              headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+              },
+             })
+                .then((response) => response.json())
+                .then((json) => console.log(json))
+          }}
         >
-          <Form>
-            <input name="cedula" label="Número de cedula"/>
-            <input name="credito" label="Número de crédito"/>
-          </Form>  
+          { ({values, handleSubmit, handleChange, handleBlur}) => (
+          <Form onSubmit={handleSubmit}>
+            
+            <div>
+              <label htmlFor="title">Titulo</label> 
+              <Field type="text" id="title" name="title" placeholder="Titulo" />
+            </div>
+            <div>
+              <label htmlFor="body">Descripcion</label>
+              <Field type="text" id="body" name="body" placeholder="Descripcion" />
+            </div>  
+            <button type="submit">Enviar</button>
+          </Form>
+          )}
         </Formik>
       </header>
       <div className="container">
